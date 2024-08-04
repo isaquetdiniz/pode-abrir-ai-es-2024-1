@@ -78,7 +78,7 @@ configure o banco de dados (se aplicável)
 Esse projeto está todo documento nesse mesmo reposítório, [clique aqui](/docs) para acessa-lá.
 
 ## Créditos
-No momento está projeto está sendo desenvolvido e mantido por:
+No momento está projeto está sendo desenvolvido e mantido por [Guilhmerme Vinícius - gvcc](https://github.com/GUIBA4), [Isaque Diniz - itd](https://github.com/isaquetdiniz) e [Maria Bezerra - mbdma](https://github.com/mariabdma).
 
 <a href="https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=isaquetdiniz/pode-abrir-ai-es-2024-1" />
