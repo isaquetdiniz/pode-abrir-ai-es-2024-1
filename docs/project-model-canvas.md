@@ -5,8 +5,16 @@
 - **Instruções**: Melhorar o mapeamento sobre o historico dos emprendimentos em Recife, afim de analisar e ajudar  os empreendedores na escolha da melhor região para abrir o seu negócio. 
 
 ## 2. Requisitos Principais
-- **Descrição**: Liste os requisitos principais que o sistema deve satisfazer para ser considerado bem-sucedido. Estes podem incluir funcionalidades específicas, padrões de qualidade, e requisitos de desempenho.
-- **Instruções**: Considere o que os usuários finais esperam do produto final e quais funcionalidades são essenciais para atender essas expectativas.
+- **Descrição**:
+  - Integração com o geosampa para trazer um mapa interativo para o usuario buscar informações da licalidade escolhida
+  - Login
+  - Cadasro de usuarios
+  - Um JOB para atualizar os dados das empresas e localizações automaticamente em um banco dados postgres, com uma frequencia de -3d
+  - Search bar para usuario buscar localização no mapa
+  - Modal de detalhamento indicando empresas abertas naquela localização
+  - Modal para atualização de dados do usuario
+
+- **Instruções**: Uma plataforma de facil acesso, que ajude os empreendedores nas pesquisas e estudos de onde melhor abrir o seu empreendimento em Recife. Para isso é necessario um mapa interativo afim de facilitar a localização da região escolhidada pelo usuario e também uma atualização de até 3 dias na base de dados com novas informações sobre a abertura e fechamento das empresas na cidade, para garantir a veracidade das informações e ajudar os usuarios na decisão de onde abrir o seu negócio.
 
 ## 3. Stakeholders
 - **Descrição**:
