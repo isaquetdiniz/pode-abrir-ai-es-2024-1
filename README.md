@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/status-active-success.svg">
   <a href="https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/issues"><img src="https://img.shields.io/github/issues/isaquetdiniz/pode-abrir-ai-es-2024-1.svg" alt="Issues"></a>
   <a href=""><img src="https://img.shields.io/github/issues-pr/isaquetdiniz/pode-abrir-ai-es-2024-1.svg" alt="Pull requests"></a>
-  <a href="https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/LICENSE">
+  <a href="https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/isaquetdiniz/pode-abrir-ai-es-2024-1?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
   </a>
 </p>
