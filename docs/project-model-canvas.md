@@ -2,7 +2,7 @@
 
 ## 1. Objetivos e Justificativas
 - **Descrição**: O objetivo do projeto "Posso abrir aí?" é fornecer insights valiosos que podem embasar decisões estratégicas tanto para novos empreendedores quanto para empresas estabelecidas que buscam consultoria.
-- **Instruções**: Explique o problema que o projeto resolve e como ele se alinha aos objetivos do curso ou às necessidades dos usuários finais.
+- **Instruções**: Melhorar o mapeamento sobre o historico dos emprendimentos em Recife, afim de analisar e ajudar  os empreendedores na escolha da melhor região para abrir o seu negócio. 
 
 ## 2. Requisitos Principais
 - **Descrição**: Liste os requisitos principais que o sistema deve satisfazer para ser considerado bem-sucedido. Estes podem incluir funcionalidades específicas, padrões de qualidade, e requisitos de desempenho.
