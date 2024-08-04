@@ -1,7 +1,7 @@
 # Project Model Canvas Template para Projetos de Software
 
 ## 1. Objetivos e Justificativas
-- **Descrição**: Defina claramente o que o projeto visa alcançar e por que é importante. Tente estabelecer objetivos específicos, mensuráveis, alcançáveis, relevantes e temporais (SMART).
+- **Descrição**: O objetivo do projeto "Posso abrir aí?" é fornecer insights valiosos que podem embasar decisões estratégicas tanto para novos empreendedores quanto para empresas estabelecidas que buscam consultoria.
 - **Instruções**: Explique o problema que o projeto resolve e como ele se alinha aos objetivos do curso ou às necessidades dos usuários finais.
 
 ## 2. Requisitos Principais
@@ -9,7 +9,10 @@
 - **Instruções**: Considere o que os usuários finais esperam do produto final e quais funcionalidades são essenciais para atender essas expectativas.
 
 ## 3. Stakeholders
-- **Descrição**: Identifique todos os grupos ou indivíduos interessados no projeto, incluindo usuários finais, equipe de projeto, e qualquer outra parte que seja afetada pelo projeto.
+- **Descrição**:
+Usuários Finais: Empreendedores, empresas estabelecidas, consultores.
+Equipe de Projeto: Desenvolvedores de software, analistas de dados, gestores de projeto.
+Outros Interessados: Prefeitura do Recife, consultores, investidores, comunidade local.
 - **Instruções**: Mapeie os principais interessados e descreva como eles são impactados pelo projeto. Inclua também suas expectativas e responsabilidades.
 
 ## 4. Entregas
