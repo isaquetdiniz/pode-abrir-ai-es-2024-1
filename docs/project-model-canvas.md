@@ -11,7 +11,7 @@
 ## 3. Stakeholders
 - **Descrição**:
 Usuários Finais: Empreendedores, empresas estabelecidas, consultores.
-Equipe de Projeto: Desenvolvedores de software, analistas de dados, gestores de projeto.
+Equipe de Projeto: Desenvolvedores de software, gestores de projeto.
 Outros Interessados: Prefeitura do Recife, consultores, investidores, comunidade local.
 - **Instruções**: Mapeie os principais interessados e descreva como eles são impactados pelo projeto. Inclua também suas expectativas e responsabilidades.
 
