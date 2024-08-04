@@ -7,7 +7,7 @@
 ## 2. Requisitos Principais
 - **Descrição**:
   - Integração com o geosampa para trazer um mapa interativo para o usuario buscar informações da licalidade escolhida
-  - Login
+  - Login social ( google )
   - Cadasro de usuarios
   - Um JOB para atualizar os dados das empresas e localizações automaticamente em um banco dados postgres, com uma frequencia de -3d
   - Search bar para usuario buscar localização no mapa
@@ -24,8 +24,18 @@ Outros Interessados: Prefeitura do Recife, consultores, investidores, comunidade
 - **Instruções**: Mapeie os principais interessados e descreva como eles são impactados pelo projeto. Inclua também suas expectativas e responsabilidades.
 
 ## 4. Entregas
-- **Descrição**: Defina quais serão os principais entregáveis do projeto. Isso pode incluir software, documentação, treinamento e outros itens tangíveis.
-- **Instruções**: Liste todos os componentes que precisam ser entregues para que o projeto seja considerado completo. Seja específico sobre o que cada entrega inclui.
+- **Descrição**:
+  - API - next.js;
+  - Plataforma digital funcional - react.js;
+  - Cronograma;
+  - Documentação de requisitos;
+  - Project charter.
+- **Instruções**:
+  - API - next.js ( api para salvar os dados dos usuarios que acessam, atualizar a base de dados sobre os registros de abertura e fechamento das empresasa em recife e rotas exportar essas informações ao frontend );
+  - Plataforma digital funcional - react.js ( frontend desktop com login social com google, complete seu cadastro, mapa com drag em drop, detalhamento de historio da região e barra de pesquisa para facilitar busca );
+  - Cronograma ( documentação detalhando os marcos das entregas de cada funcionalidade do sistema );
+  - Documentação de requisitos ( documentação com o detalhamento de cada requisito para ser integrador e desenvolvido no sistema );
+  - Project charter ( documentação inicial do projeto como uma certidão de nascimento, afim de alinhar os acordos, principais obijetivos do projeto e data de inicio e fim ).
 
 ## 5. Marcos e Cronograma
 - **Descrição**: Estabeleça os principais marcos do projeto e um cronograma detalhado para alcançá-los.
