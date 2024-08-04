@@ -57,3 +57,7 @@ Afim de conhecimento, fizemos uma pesquisa na internet e encontramos um valor m�
 
 ## 9. Restrições
 - O time possuí uma baixa disponibilidade para atuar no projeto, cerca de 6 horas por semana por pessoa.
+- Não será desenvolvida versão mobile para a plataforma.
+- Trabalharemos apenas com dados públicos, inicialmente os da prefeitura mas nada impede que novas bases possam ser utilizadas se julgado positivo para o projeto.
+- Utlizaremos apenas ferramentas gratuitas em todo o projeto para não gerar custos para o time.
+- 
