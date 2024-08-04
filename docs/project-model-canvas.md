@@ -42,17 +42,18 @@ Outros Interessados: Prefeitura do Recife, consultores, investidores, comunidade
 - **Instruções**: Desenvolva um plano de tempo realista que alinhe as entregas com os marcos. Inclua datas ou semanas do curso para cada marco.
 
 ## 6. Riscos e Suposições
-- **Descrição**: Identifique potenciais riscos que podem afetar o sucesso do projeto e quaisquer suposições feitas durante o planejamento.
-- **Instruções**: Pense em fatores internos e externos que poderiam desviar o projeto de seu curso e como você pretende mitigar esses riscos.
+- O time não ter disponibilidade para atuar em tudo que está sendo proposto.
+- A base de dados que servirá como base parar se ser atualizada.
+- A base de dados não ter dados suficientes para extrair o valor que esperamos com a plataforma.
+- O empreeendedor não achar a plataforma atrativa e não ter adesão e uso.
 
 ## 7. Orçamento
-- **Descrição**: Faça uma estimativa dos recursos financeiros necessários para a realização do projeto.
-- **Instruções**: Considere se haverá custos associados, como software, hardware ou outros recursos. Se o projeto é puramente acadêmico, foco pode ser no tempo como recurso.
+Estamos considerando uma alocação semanal de 6 horas por semana de cada integrante do time. O que resulta em 18 horas por semana no projeto. Considerando o início do projeto no dia 05/08/2024 e a finalização no dia 04/10/2024 - na realidade a finalização será no dia 07 ou 09 com a apresentação final, temos praticamente 9 semanas. Resultando num total de 162 horas.
+Afim de conhecimento, fizemos uma pesquisa na internet e encontramos um valor médio de R$ 80,00 reais por hora para um desenvolvedor júnior como freelancer, considerando que o projeto seria desenvolvido apenas por desenvolvedores juniores, e naturalmente apenas suas habilidades técnicas seriam necessárias, teríamos um custo de R$ 12.960,00 apenas com mão de obra para o projeto.
 
 ## 8. Premissas
 - **Descrição**: Suposições que são consideradas verdadeiras para o planejamento do projeto.
 - **Instruções**: Liste as principais suposições que estão sendo feitas ao planejar o projeto. Explique como essas suposições afetam o planejamento e a execução do projeto.
 
 ## 9. Restrições
-- **Descrição**: Limitações ou condições que afetam a execução do projeto.
-- **Instruções**: Identifique as principais restrições que o projeto enfrentará. Isso pode incluir limitações de tempo, recursos, tecnologias ou regulamentações específicas.
+- O time possuí uma baixa disponibilidade para atuar no projeto, cerca de 6 horas por semana por pessoa.
