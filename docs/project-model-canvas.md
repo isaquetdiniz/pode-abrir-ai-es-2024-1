@@ -52,12 +52,12 @@ Estamos considerando uma alocação semanal de 6 horas por semana de cada integr
 Afim de conhecimento, fizemos uma pesquisa na internet e encontramos um valor médio de R$ 80,00 reais por hora para um desenvolvedor júnior como freelancer, considerando que o projeto seria desenvolvido apenas por desenvolvedores juniores, e naturalmente apenas suas habilidades técnicas seriam necessárias, teríamos um custo de R$ 12.960,00 apenas com mão de obra para o projeto.
 
 ## 8. Premissas
-- **Descrição**: Suposições que são consideradas verdadeiras para o planejamento do projeto.
-- **Instruções**: Liste as principais suposições que estão sendo feitas ao planejar o projeto. Explique como essas suposições afetam o planejamento e a execução do projeto.
+- O time possui disponbilidade de 18 horas por semana, o que afeta diretamente o planejamento das tarefas e o que vai ser efetivamente entregue.
+- Os dados disponibilizados serão públicos pelo menos até o final do projeto, eles deixando de serem públicos o projeto deve ser parado pois podem haver problemas legais envolvidos.
+- Conseguimos trazer alto valor com a solução, isso afeta diretamente a motivação do time em entregar a uma solução final que impacte o ecossistema.
 
 ## 9. Restrições
 - O time possuí uma baixa disponibilidade para atuar no projeto, cerca de 6 horas por semana por pessoa.
 - Não será desenvolvida versão mobile para a plataforma.
 - Trabalharemos apenas com dados públicos, inicialmente os da prefeitura mas nada impede que novas bases possam ser utilizadas se julgado positivo para o projeto.
-- Utlizaremos apenas ferramentas gratuitas em todo o projeto para não gerar custos para o time.
-- 
+- Utlizaremos apenas ferramentas gratuitas em todo o projeto para não gerar custos para o time. 
