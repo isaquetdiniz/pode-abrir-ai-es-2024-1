@@ -27,8 +27,32 @@ Outros Interessados: Prefeitura do Recife, consultores, investidores, comunidade
 - Project charter (documentação inicial do projeto como uma certidão de nascimento, afim de alinhar os acordos, principais obijetivos do projeto e data de inicio e fim).
 
 ## 5. Marcos e Cronograma
-- **Descrição**: Estabeleça os principais marcos do projeto e um cronograma detalhado para alcançá-los.
-- **Instruções**: Desenvolva um plano de tempo realista que alinhe as entregas com os marcos. Inclua datas ou semanas do curso para cada marco.
+
+Estruturação e inicio 19/08/2024
+-   Estruturação do projeto
+-   mockup de telas
+-   documentação de arquitetura
+-   CRUD de empresas
+-   tela de login
+
+JOB de empresas e Auth 02/09/2024
+- autenticação via google
+- CRUD usuarios
+- JOB para atualização automatica do dados de empresa
+- layout de pagina inicial
+
+Integração com mapa e cadastro 16/09/2024
+- integrar com lib de mapa
+- funcionalidade de busca no mapa
+- tela integrada de cadastro inicial
+
+Detalhamento de empresas e edição de usuario 30/09/2024
+- detalhamento de empresa
+- modal para edição de dados de usuario
+
+Ajustes final e Deploy da plataforma 04/09/2024
+- configuração da vercel
+- ajustes e melhorias finais
 
 ## 6. Riscos e Suposições
 - O time não ter disponibilidade para atuar em tudo que está sendo proposto.
