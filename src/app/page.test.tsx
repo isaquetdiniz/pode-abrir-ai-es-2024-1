@@ -5,7 +5,7 @@ import Page from "../app/page";
 test("Page", () => {
 	render(<Page />);
 
-	const main = within(screen.getByRole("main"));
+	const main = within(screen.getByRole("heading"));
 
 	expect(main).toBeDefined();
 });
