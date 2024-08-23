@@ -1,0 +1,35 @@
+{
+  "name": "pode-abrir-ai-es-2024-1",
+  "version": "1.0.0",
+  "description": "Pode abrir aí? É uma poderosa ferramenta para análise do ecossistema empreendedor recifense, construída na cadeira de Engenharia de Software no período letivo 2024.1",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.17.0",
+    "npm": "10.8.2"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1.git"
+  },
+  "keywords": [
+    "docker",
+    "nextjs",
+    "opendata",
+    "postgresql",
+    "typescript",
+    "next-auth",
+    "vercel"
+  ],
+  "author": "itd@cin.ufpe.br",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/issues"
+  },
+  "homepage": "https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1#readme"
+}
