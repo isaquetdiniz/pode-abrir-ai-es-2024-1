@@ -40,33 +40,35 @@ Essas instruções fornecerão uma cópia do projeto instalada e funcionando na 
 
 O que é necessário para instalar o software e como instalá-lo:
 
-```bash
-
-comando para instalar
-
-```
+- GIT
+- Node 20.17.0
+- NPM 10.8.2
 
 ### Instalação
 
 Um passo a passo da série de exemplos que informam como fazer um ambiente de desenvolvimento em execução:
 
-```bash
-
-clone o repositório
-
-```
+1. Clone o repositório
 
 ```bash
-
-instale todas as dependências
-
+git clone git@github.com:isaquetdiniz/pode-abrir-ai-es-2024-1.git
 ```
+
+2. Crie um arquivo .env na raiz do projeto e preencha-o de acordo com o .env.example
+
+3. Instale as dependências
 
 ```bash
-
-configure o banco de dados (se aplicável)
-
+npm ci
 ```
+
+4. Rode o projeto em modo de desenvolvimento
+
+```bash
+npm run dev
+```
+
+- Para rodar
 
 ## Funcionalidades
 
@@ -78,9 +80,11 @@ configure o banco de dados (se aplicável)
 
 ## Tecnologias
 
-- Tecnologia 1
-- Tecnologia 2
-- Tecnologia 3
+- [Next.js](https://nextjs.org/) – framework
+- [TypeScript](https://www.typescriptlang.org/) – language
+- [Tailwind](https://tailwindcss.com/) – CSS
+- [NextAuth.js](https://next-auth.js.org/) – auth
+- [Vercel](https://vercel.com/) – deployments
 
 ## Documentação
 
