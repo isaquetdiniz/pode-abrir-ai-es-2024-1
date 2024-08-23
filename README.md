@@ -68,7 +68,24 @@ npm ci
 npm run dev
 ```
 
-- Para rodar
+- Para rodar em modo de produção, rode:
+
+```bash
+npm run build
+npm run start
+```
+
+- Para verificar formato de arquivos:
+
+```bash
+npm run check
+```
+
+- Para testes, utilize:
+
+```bash
+npm run test
+```
 
 ## Funcionalidades
 
