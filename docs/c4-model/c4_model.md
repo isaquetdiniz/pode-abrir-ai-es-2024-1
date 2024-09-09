@@ -7,7 +7,7 @@ O diagrama de contexto fornece uma visão geral do sistema "Posso abrir aí?" e 
 - **Atores Externos:** Usuários (Empreendedores, Empresas Estabelecidas, Consultores), Sistemas Externos (GeoSampa, Google OAuth), Prefeitura do Recife
 
 ### 1.2. Diagrama
-![Diagrama de Contexto](/diagrama-contexto.png)
+![Diagrama de Contexto](docs/c4-model/Diagrama_de_Contexto.png)
 
 ### 1.3. Descrição dos Componentes
 - **Atores Externos:**
