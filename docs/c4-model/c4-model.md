@@ -111,12 +111,15 @@ O diagrama de componente detalha os principais módulos do sistema **"Posso abri
 
 ### 5.1. Decisões Importantes
 
-Documente aqui as decisões arquiteturais importantes que foram tomadas durante o desenvolvimento do projeto, incluindo justificativas e impactos.
+- **Decisão:** Utilização de cronjobs para sincronizar dados.
+  - **Descrição:** Decidimos sincronizar os dados de maneira gradual através de um processo de ETL utilizando cronjobs.
+  - **Justificativa:** Tendo em vista que a extração dos dados ocorrerá de uma plataforma de dados aberta mantida pela prefeitura, afim de evitar latência e possíveis indiponibilidades dos dados utilizaremos cronjobs para realizar o processo de extração, carregamento e transformação dos dados abertos diretamente para um banco de dados próprio.
+  - **Impacto:** Impacta diretamente na maneira como os dados são consumidos, assumindo que em algum momento os dados podem estar desatualizados com a fonte, também impacta no tempo de resposta, tendo em vista que os dados estarão num banco de dados próprio, diminuindo a dependência com outros sistemas.
 
-- **Decisão:** [Nome ou breve descrição da decisão]
-  - **Descrição:** [Detalhes sobre a decisão]
-  - **Justificativa:** [Motivo pelo qual a decisão foi tomada]
-  - **Impacto:** [Impacto da decisão no sistema]
+- **Decisão:** Aplicação monolítica (frontend e backend integrados).
+  - **Descrição:** Decidimos realizar o desenvolvimento do frontend e do backend de forma integrada no mesmo projeto utilizando um framework web amplamente utilizado chamado Next.js.
+  - **Justificativa:** Considerando a complexidade do sistema e sua entrega, fez sentido utilizar um framework web que "volta as origens" do desenvolvimento web, oferecendo um ferramental para o desenvolvimento do frontend e do backend no mesmo projeto, repositório, imagem do Docker e fluxo de entrega e testes.
+  - **Impacto:** Trás agilidade no desenvolvimento e entrega da aplicação. É possível configurar apenas um ambiente, uma pipeline de testes e as mudanças na aplicação são refletidas quase que instantaneamente no repositório principal, branches que estão em desenvolvimento e features tanto de frontend como de backend.
 
 ---
 
@@ -124,10 +127,8 @@ Documente aqui as decisões arquiteturais importantes que foram tomadas durante 
 
 ### 6.1. Padrões e Práticas
 
-Liste os padrões arquiteturais e práticas recomendadas que foram seguidos durante o desenvolvimento da arquitetura.
-
-- **Padrões:** [Ex: MVC, CQRS, Event-Driven Architecture]
-- **Práticas:** [Ex: Continuous Integration, Code Review, etc.]
+- **Padrões:** ETL, Cronjobs, Monolito, Clean Architecture.
+- **Práticas:** Git e Github (repositório remoto), Continuous Integration (checagem de estilo e formatação de código, bateria de testes), Continuos Delivery (deploy automático na plataforma da vercel), Branch protection rules (regras de proteção de branches), Code review.
 
 ### 6.2. Próximos Passos
 
