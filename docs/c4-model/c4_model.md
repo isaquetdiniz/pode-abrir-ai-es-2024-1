@@ -64,19 +64,40 @@ O diagrama de container ilustra os principais componentes do sistema "Posso abri
 ## 3. Diagrama de Componente
 
 ### 3.1. Descrição do Diagrama de Componente
-O diagrama de componente detalha a arquitetura interna da API e da Aplicação Web, mostrando os componentes que compõem cada container.
+O diagrama de componente detalha os principais módulos do sistema **"Posso abrir aí?"**, ilustrando como os diferentes componentes interagem entre si, tanto no frontend quanto no backend.
 
-- **Container Focado:**  API (Next.js)
+- **Componentes Incluídos:** Autenticação, Usuários, Pesquisa, Localização, Empresas.
 
 ### 3.2. Diagrama
 ![Diagrama de Componente](path/para/diagrama-componente.png)
 
 ### 3.3. Descrição dos Componentes
-- **Componente de Login:** Gerencia a autenticação dos usuários via Google Auth.
-  - **Responsabilidade:** Autenticação de usuários.
-  - **Interações:** Entre Usuário e Plataforma
-  - **Tecnologias:** Google Auth
 
+- **Autenticação (Google OAuth):** Responsável por gerenciar a autenticação dos usuários através do login social com o Google.
+  - **Responsabilidade:** Autenticação segura dos usuários.
+  - **Interações:** Usuário ↔ Plataforma (via API).
+  - **Tecnologias:** Google OAuth.
+
+- **Usuários:** Componente que gerencia as informações dos usuários cadastrados na plataforma.
+  - **Responsabilidade:** Manutenção e gestão dos dados dos usuários.
+  - **Interações:** Autenticação ↔ Pesquisa, Autenticação ↔ Empresas.
+  - **Tecnologias:** Banco de Dados (PostgreSQL).
+
+- **Pesquisa:** Componente que permite a pesquisa de dados de empresas e localidades, com base nos critérios fornecidos pelos usuários.
+  - **Responsabilidade:** Gerenciar a lógica de pesquisa e filtragem dos dados.
+  - **Interações:** Usuários ↔ Localização.
+  - **Tecnologias:** Algoritmo de pesquisa, Banco de Dados.
+
+- **Localização:** Componente responsável por gerenciar a lógica de visualização dos dados geográficos.
+  - **Responsabilidade:** Fornecer dados geográficos relevantes para a visualização no mapa.
+  - **Interações:** Pesquisa ↔ Empresas, OpenLayers.
+  - **Tecnologias:** OpenLayers, Banco de Dados.
+
+- **Empresas:** Componente que gerencia as informações sobre as empresas cadastradas e fornece insights para os usuários.
+  - **Responsabilidade:** Armazenar e exibir dados das empresas.
+  - **Interações:** Localização ↔ Pesquisa, Localização ↔ Usuários.
+  - **Tecnologias:** PostgreSQL.
+    
 ---
 
 ## 5. Decisões Arquiteturais
