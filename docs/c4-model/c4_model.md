@@ -4,7 +4,7 @@
 O diagrama de contexto fornece uma visão geral do sistema "Posso abrir aí?" e suas interações com os atores externos.
 
 - **Sistema:** Posso abrir aí?
-- **Atores Externos:** Usuários (Empreendedores, Empresas Estabelecidas, Consultores), Sistemas Externos (GeoSampa, Google OAuth), Prefeitura do Recife
+- **Atores Externos:** Usuários (Empreendedores, Empresas Estabelecidas, Consultores), Sistemas Externos (GeoSampa, Google Auth), Prefeitura do Recife
 
 ### 1.2. Diagrama
 ![Diagrama de Contexto](/Diagrama_de_Contexto.png)
@@ -18,30 +18,47 @@ O diagrama de contexto fornece uma visão geral do sistema "Posso abrir aí?" e 
 
 ---
 
-## 2. Diagrama de Container
+# 2. Diagrama de Container
 
 ### 2.1. Descrição do Diagrama de Container
-O diagrama de container mostra os principais containers que compõem o sistema "Posso abrir aí?" e suas interações.
+O diagrama de container ilustra os principais componentes do sistema "Posso abrir aí?" e suas interações, divididos entre o Frontend/Cliente e o Backend.
 
-- **Containers Incluídos:** Aplicação Web, API (Next.js), Banco de Dados (PostgreSQL), Sistema de Login Social (Google OAuth), Serviço de Mapa Interativo (GeoSampa)
+- **Containers Incluídos:** Aplicação Web, API Service, Banco de Dados (PostgreSQL), Sistema de Login Social (Google Auth), Serviço de Mapa Interativo (OpenLayers)
 
 ### 2.2. Diagrama
 ![Diagrama de Container](path/para/diagrama-container.png)
 
 ### 2.3. Descrição dos Containers
-- **Aplicação Web (React.js):** Interface para os usuários interagirem com o sistema, incluindo login social, mapa interativo e modais para detalhamento de empresas.
-  - **Tecnologias:** React.js, Google OAuth
-  - **Responsabilidade:** Exibição de informações e interação com os usuários.
-  - **Interações:** API, GeoSampa, Banco de Dados
-- **API (Next.js):** Backend responsável por salvar e atualizar dados de usuários e empresas.
-  - **Tecnologias:** Next.js, Axios
-  - **Responsabilidade:** Fornecer dados para o frontend e gerenciar a integração com o banco de dados.
-  - **Interações:** Banco de Dados (PostgreSQL), Aplicação Web
-- **Banco de Dados (PostgreSQL):** Armazena dados de empresas, usuários e histórico de regiões.
-  - **Tecnologias:** PostgreSQL
-  - **Responsabilidade:** Manter as informações de empresas, usuários e suas atualizações periódicas.
-  - **Interações:** API
 
+- **Aplicação Web (React.js):** Interface gráfica para os usuários acessarem o sistema. Inclui funcionalidades como login social, visualização do mapa interativo e modais com informações detalhadas sobre empresas.
+  - **Tecnologias:** React.js, OpenLayers, Google Auth
+  - **Responsabilidade:** Fornecer uma interface amigável para interação com os dados e funções do sistema.
+  - **Interações:** API Service, OpenLayers (mapa), Google Auth (login)
+
+- **API Service (Next.js):** Backend responsável por fornecer dados para o frontend e gerenciar a lógica de negócios, como o armazenamento e atualização de informações de empresas e usuários.
+  - **Tecnologias:** Next.js, Axios, Docker
+  - **Responsabilidade:** Processamento de requisições, gerenciamento de dados e integração com o banco de dados.
+  - **Interações:** Banco de Dados (PostgreSQL), Aplicação Web
+
+- **Banco de Dados (PostgreSQL):** Repositório que armazena informações sobre empresas, usuários e dados geográficos relevantes para a aplicação.
+  - **Tecnologias:** PostgreSQL
+  - **Responsabilidade:** Armazenar dados estruturados, como detalhes das empresas e informações dos usuários.
+  - **Interações:** API Service
+
+- **Sistema de Login Social (Google Auth):** Serviço de autenticação utilizado para login seguro dos usuários através das credenciais Google.
+  - **Tecnologias:** Google Auth
+  - **Responsabilidade:** Prover autenticação e gerenciamento de sessão dos usuários.
+  - **Interações:** Aplicação Web
+
+- **Serviço de Mapa Interativo (OpenLayers):** Ferramenta de visualização de mapas usada para exibir dados geográficos relevantes dentro da aplicação.
+  - **Tecnologias:** OpenLayers
+  - **Responsabilidade:** Fornecer a interface de mapa interativo para visualização dos locais de interesse.
+  - **Interações:** Aplicação Web
+
+- **CRON Jobs:** Serviço automatizado que atualiza periodicamente os dados das empresas, sincronizando as informações com o banco de dados.
+  - **Responsabilidade:** Atualizar os dados de empresas e regiões com base nos dados fornecidos pelo serviço de Dados Recife.
+  - **Interações:** API Service, Banco de Dados
+    
 ---
 
 ## 3. Diagrama de Componente
@@ -55,25 +72,10 @@ O diagrama de componente detalha a arquitetura interna da API e da Aplicação W
 ![Diagrama de Componente](path/para/diagrama-componente.png)
 
 ### 3.3. Descrição dos Componentes
-- **Componente de Login:** Gerencia a autenticação dos usuários via Google OAuth.
+- **Componente de Login:** Gerencia a autenticação dos usuários via Google Auth.
   - **Responsabilidade:** Autenticação de usuários.
-  - **Interações:** [Componentes com os quais interage]
-  - **Tecnologias:** [Linguagens, frameworks, bibliotecas]
-
----
-
-## 4. Diagrama de Código (Opcional)
-
-### 4.1. Descrição do Diagrama de Código
-Este nível detalha o design e a arquitetura do código dentro de um componente específico. Ideal para sistemas complexos ou quando há necessidade de documentar padrões de design específicos.
-
-### 4.2. Diagrama
-![Diagrama de Código](path/para/diagrama-codigo.png)
-
-### 4.3. Descrição do Código
-- **[Nome da Classe/Módulo]:** Descrição da estrutura de código, padrões de design utilizados e principais responsabilidades.
-  - **Métodos:** [Descrição dos principais métodos e sua funcionalidade]
-  - **Padrões de Design:** [Padrões de design aplicados, como Singleton, Factory, etc.]
+  - **Interações:** Entre Usuário e Plataforma
+  - **Tecnologias:** Google Auth
 
 ---
 
