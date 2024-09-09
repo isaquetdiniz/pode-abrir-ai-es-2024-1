@@ -132,7 +132,9 @@ O diagrama de componente detalha os principais módulos do sistema **"Posso abri
 
 ### 6.2. Próximos Passos
 
-Indique quaisquer melhorias futuras ou áreas a serem exploradas para a evolução da arquitetura.
+- Detalhar o processo de ETL
+- Adicionar novos fluxos de autenticação
+- Detalhar serviço de análise de viabilidade
 
 ---
 
