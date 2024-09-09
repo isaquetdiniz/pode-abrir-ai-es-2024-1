@@ -1,15 +1,18 @@
 ## 1. Diagrama de Contexto
 
 ### 1.1. Descrição do Diagrama de Contexto
+
 O diagrama de contexto fornece uma visão geral do sistema "Posso abrir aí?" e suas interações com os atores externos.
 
 - **Sistema:** Posso abrir aí?
 - **Atores Externos:** Usuários (Empreendedores, Empresas Estabelecidas, Consultores), Sistemas Externos (GeoSampa, Google Auth), Prefeitura do Recife
 
 ### 1.2. Diagrama
-![Diagrama de Contexto](/Diagrama_de_Contexto.png)
+
+![Diagrama de Contexto](/docs/c4-model/diagrama-de-contexto.png)
 
 ### 1.3. Descrição dos Componentes
+
 - **Atores Externos:**
   - **Empreendedores:** Consultam o mapa interativo e buscam informações sobre regiões.
   - **Consultores:** Utilizam os dados para análise e consultoria.
@@ -21,12 +24,14 @@ O diagrama de contexto fornece uma visão geral do sistema "Posso abrir aí?" e 
 # 2. Diagrama de Container
 
 ### 2.1. Descrição do Diagrama de Container
+
 O diagrama de container ilustra os principais componentes do sistema "Posso abrir aí?" e suas interações, divididos entre o Frontend/Cliente e o Backend.
 
 - **Containers Incluídos:** Aplicação Web, API Service, Banco de Dados (PostgreSQL), Sistema de Login Social (Google Auth), Serviço de Mapa Interativo (OpenLayers)
 
 ### 2.2. Diagrama
-![Diagrama de Container](path/para/diagrama-container.png)
+
+![Diagrama de Container](/docs/c4-model/diagrama-de-container.png)
 
 ### 2.3. Descrição dos Containers
 
@@ -58,18 +63,20 @@ O diagrama de container ilustra os principais componentes do sistema "Posso abri
 - **CRON Jobs:** Serviço automatizado que atualiza periodicamente os dados das empresas, sincronizando as informações com o banco de dados.
   - **Responsabilidade:** Atualizar os dados de empresas e regiões com base nos dados fornecidos pelo serviço de Dados Recife.
   - **Interações:** API Service, Banco de Dados
-    
+
 ---
 
 ## 3. Diagrama de Componente
 
 ### 3.1. Descrição do Diagrama de Componente
+
 O diagrama de componente detalha os principais módulos do sistema **"Posso abrir aí?"**, ilustrando como os diferentes componentes interagem entre si, tanto no frontend quanto no backend.
 
 - **Componentes Incluídos:** Autenticação, Usuários, Pesquisa, Localização, Empresas.
 
 ### 3.2. Diagrama
-![Diagrama de Componente](path/para/diagrama-componente.png)
+
+![Diagrama de Componente](/docs/c4-model/diagrama-de-componentes.png)
 
 ### 3.3. Descrição dos Componentes
 
@@ -97,12 +104,13 @@ O diagrama de componente detalha os principais módulos do sistema **"Posso abri
   - **Responsabilidade:** Armazenar e exibir dados das empresas.
   - **Interações:** Localização ↔ Pesquisa, Localização ↔ Usuários.
   - **Tecnologias:** PostgreSQL.
-    
+
 ---
 
 ## 5. Decisões Arquiteturais
 
 ### 5.1. Decisões Importantes
+
 Documente aqui as decisões arquiteturais importantes que foram tomadas durante o desenvolvimento do projeto, incluindo justificativas e impactos.
 
 - **Decisão:** [Nome ou breve descrição da decisão]
@@ -115,12 +123,14 @@ Documente aqui as decisões arquiteturais importantes que foram tomadas durante 
 ## 6. Considerações Finais
 
 ### 6.1. Padrões e Práticas
+
 Liste os padrões arquiteturais e práticas recomendadas que foram seguidos durante o desenvolvimento da arquitetura.
 
 - **Padrões:** [Ex: MVC, CQRS, Event-Driven Architecture]
 - **Práticas:** [Ex: Continuous Integration, Code Review, etc.]
 
 ### 6.2. Próximos Passos
+
 Indique quaisquer melhorias futuras ou áreas a serem exploradas para a evolução da arquitetura.
 
 ---
