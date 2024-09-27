@@ -1,65 +1,69 @@
 {
-  "name": "pode-abrir-ai-es-2024-1",
-  "version": "1.0.0",
-  "description": "Pode abrir aí? É uma poderosa ferramenta para análise do ecossistema empreendedor recifense, construída na cadeira de Engenharia de Software no período letivo 2024.1",
-  "main": "index.js",
-  "engines": {
-    "node": ">=20.17.0",
-    "npm": ">=10.8.2"
-  },
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "check": "npx @biomejs/biome check --unsafe src",
-    "check:fix": "npx @biomejs/biome check --unsafe --write src",
-    "test": "vitest",
-    "prepare": "husky"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1.git"
-  },
-  "keywords": [
-    "docker",
-    "nextjs",
-    "opendata",
-    "postgresql",
-    "typescript",
-    "next-auth",
-    "vercel"
-  ],
-  "author": "itd@cin.ufpe.br",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/issues"
-  },
-  "homepage": "https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1#readme",
-  "dependencies": {
-    "@prisma/client": "^5.20.0",
-    "next": "14.2.6",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@commitlint/cli": "^19.4.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/react": "^16.0.0",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@vitejs/plugin-react": "^4.3.1",
-    "husky": "^9.1.5",
-    "jsdom": "^24.1.1",
-    "postcss": "^8",
-    "prisma": "^5.20.0",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5",
-    "vitest": "^2.0.5"
-  }
+	"name": "pode-abrir-ai-es-2024-1",
+	"version": "1.0.0",
+	"description": "Pode abrir aí? É uma poderosa ferramenta para análise do ecossistema empreendedor recifense, construída na cadeira de Engenharia de Software no período letivo 2024.1",
+	"main": "index.js",
+	"engines": {
+		"node": ">=20.17.0",
+		"npm": ">=10.8.2"
+	},
+	"directories": {
+		"doc": "docs"
+	},
+	"scripts": {
+		"dev": "next dev",
+		"prebuild": "npm run prisma:generate",
+		"build": "next build",
+		"prestart": "npm run migrate:push",
+		"start": "next start",
+		"check": "npx @biomejs/biome check --unsafe src",
+		"check:fix": "npx @biomejs/biome check --unsafe --write src",
+		"test": "vitest",
+		"prepare": "husky",
+		"prisma:generate": "npx prisma generate --schema=src/libs/prisma/schema.prisma",
+		"migrate:push": "npx prisma migrate deploy --schema=src/libs/prisma/schema.prisma"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1.git"
+	},
+	"keywords": [
+		"docker",
+		"nextjs",
+		"opendata",
+		"postgresql",
+		"typescript",
+		"next-auth",
+		"vercel"
+	],
+	"author": "itd@cin.ufpe.br",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/issues"
+	},
+	"homepage": "https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1#readme",
+	"dependencies": {
+		"@prisma/client": "^5.20.0",
+		"next": "14.2.6",
+		"react": "^18",
+		"react-dom": "^18"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@commitlint/cli": "^19.4.0",
+		"@commitlint/config-conventional": "^19.2.2",
+		"@testing-library/dom": "^10.4.0",
+		"@testing-library/react": "^16.0.0",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@vitejs/plugin-react": "^4.3.1",
+		"husky": "^9.1.5",
+		"jsdom": "^24.1.1",
+		"postcss": "^8",
+		"prisma": "^5.20.0",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5",
+		"vitest": "^2.0.5"
+	}
 }
