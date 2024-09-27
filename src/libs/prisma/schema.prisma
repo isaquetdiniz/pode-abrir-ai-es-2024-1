@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_NON_POOLING")
+}
+
+model Sync {
+  id     Int     @id @default(autoincrement())
+  url    String
+  state  String
+  status String
+  info   String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("syncs")
+}
+
+model Group {
+  code String @id
+  name String
+
+  cnaes Cnae[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("groups")
+}
+
+model Cnae {
+  code String @id
+  name String
+
+  group     Group         @relation(fields: [groupCode], references: [code])
+  groupCode String        @map("group_code")
+  companies CompanyCnae[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("cnaes")
+}
+
+model Neighborhood {
+  code String @id
+  name String
+
+  streets Street[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("neighborhoods")
+}
+
+model Street {
+  code String @id
+  name String
+
+  neighborhood     Neighborhood @relation(fields: [neighborhoodCode], references: [code])
+  neighborhoodCode String       @map("neighborhood_code")
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  Company   Company[]
+
+  @@map("streets")
+}
+
+model Company {
+  cnpj         String    @id
+  socialReason String    @map("social_reason")
+  fantasyName  String    @map("fantasy_name")
+  situation    String
+  openDate     DateTime  @map("open_date")
+  closeDate    DateTime? @map("close_date")
+  bother       Boolean
+  number       String?
+  batchNumber  String?   @map("batch_number")
+  lat          Float?
+  lng          Float?
+
+  street     Street        @relation(fields: [streetCode], references: [code])
+  streetCode String        @map("street_code")
+  cnaes      CompanyCnae[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("companies")
+}
+
+model CompanyCnae {
+  mainActivity        Boolean @map("main_activity")
+  predominantActivity Boolean @map("predominant_activity")
+  sanitaryActivity    Boolean @map("sanitary_activity")
+
+  company     Company @relation(fields: [companyCnpj], references: [cnpj])
+  companyCnpj String  @map("company_cnpj")
+
+  cnae     Cnae   @relation(fields: [cnaeCode], references: [code])
+  cnaeCode String @map("cnae_code")
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@id([companyCnpj, cnaeCode])
+  @@map("companies_cnaes")
+}
