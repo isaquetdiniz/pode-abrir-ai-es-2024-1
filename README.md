@@ -1,13 +1,13 @@
-<a href="https://pode-abrir-ai.vercel.app">
+<a href="https://posso-abrir-ai.vercel.app">
 <img align="center" src="https://github.com/user-attachments/assets/f5c2b48c-0faf-4925-b1d5-d73d790424cf" alt="Imagem prefeitura do recife">
 </a>
 
-<h3 align="center">Pode abrir aí?</h3>
+<h3 align="center">Posso abrir aí?</h3>
 
 <p align="center">
     Uma poderosa ferramenta para análise do ecossistema empreendedor recifense, construída na cadeira de Engenharia de Software no período letivo 2024.1
     <br />
-    <a href="https://pode-abrir-ai.vercel.app"><strong>Acesse aqui »</strong></a>
+    <a href="https://posso-abrir-ai.vercel.app"><strong>Acesse aqui »</strong></a>
     <br />
     <br />
     <a href="#Início Rápido"><strong>Início rápido</strong></a> ·
@@ -19,10 +19,10 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-active-success.svg">
-  <a href="https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/issues"><img src="https://img.shields.io/github/issues/isaquetdiniz/pode-abrir-ai-es-2024-1.svg" alt="Issues"></a>
-  <a href=""><img src="https://img.shields.io/github/issues-pr/isaquetdiniz/pode-abrir-ai-es-2024-1.svg" alt="Pull requests"></a>
-  <a href="https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/isaquetdiniz/pode-abrir-ai-es-2024-1?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
+  <a href="https://github.com/isaquetdiniz/posso-abrir-ai-es-2024-1/issues"><img src="https://img.shields.io/github/issues/isaquetdiniz/posso-abrir-ai-es-2024-1.svg" alt="Issues"></a>
+  <a href=""><img src="https://img.shields.io/github/issues-pr/isaquetdiniz/posso-abrir-ai-es-2024-1.svg" alt="Pull requests"></a>
+  <a href="https://github.com/isaquetdiniz/posso-abrir-ai-es-2024-1/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/isaquetdiniz/posso-abrir-ai-es-2024-1?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
   </a>
 </p>
 
@@ -51,7 +51,7 @@ Um passo a passo da série de exemplos que informam como fazer um ambiente de de
 1. Clone o repositório
 
 ```bash
-git clone git@github.com:isaquetdiniz/pode-abrir-ai-es-2024-1.git
+git clone git@github.com:isaquetdiniz/posso-abrir-ai-es-2024-1.git
 ```
 
 2. Crie um arquivo .env na raiz do projeto e preencha-o de acordo com o .env.example
@@ -111,8 +111,8 @@ Esse projeto está todo documento nesse mesmo reposítório, [clique aqui](/docs
 
 No momento está projeto está sendo desenvolvido e mantido por [Guilhmerme Vinícius - gvcc](https://github.com/GUIBA4), [Isaque Diniz - itd](https://github.com/isaquetdiniz) e [Maria Bezerra - mbdma](https://github.com/mariabdma).
 
-<a href="https://github.com/isaquetdiniz/pode-abrir-ai-es-2024-1/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=isaquetdiniz/pode-abrir-ai-es-2024-1" />
+<a href="https://github.com/isaquetdiniz/posso-abrir-ai-es-2024-1/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=isaquetdiniz/posso-abrir-ai-es-2024-1" />
 </a>
 
 ## Licença
