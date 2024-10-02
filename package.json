@@ -44,9 +44,13 @@
 	"homepage": "https://github.com/isaquetdiniz/posso-abrir-ai-es-2024-1#readme",
 	"dependencies": {
 		"@prisma/client": "^5.20.0",
+		"leaflet": "^1.9.4",
+		"leaflet-defaulticon-compatibility": "^0.1.2",
+		"leaflet-geosearch": "^4.0.0",
 		"next": "14.2.6",
 		"react": "^18",
-		"react-dom": "^18"
+		"react-dom": "^18",
+		"react-leaflet": "^4.2.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
@@ -54,6 +58,7 @@
 		"@commitlint/config-conventional": "^19.2.2",
 		"@testing-library/dom": "^10.4.0",
 		"@testing-library/react": "^16.0.0",
+		"@types/leaflet": "^1.9.12",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
