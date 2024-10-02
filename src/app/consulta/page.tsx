@@ -1,21 +1,7 @@
-import { Button } from "@/components/ui/button";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PrismaClient } from "@prisma/client";
 import dynamic from "next/dynamic";
+import { ConsultationForm } from "./form";
 
 export default async function Page() {
 	const { neighborhoods, groups } = await getNeighborhoodsAndGroups();
@@ -23,6 +9,7 @@ export default async function Page() {
 	return (
 		<main className="flex flex-col items-center justify-center w-screen h-screen">
 			<MapWithNoSSR />
+			{/*
 			<Card className="flex flex-col items-center relative w-[460px] h-[600px] space-y-8">
 				<CardHeader>
 					<CardTitle className="text-xl">
@@ -76,6 +63,18 @@ export default async function Page() {
 				<CardFooter>
 					<Button className="w-[280px] h-[45px]">Analisar</Button>
 				</CardFooter>
+			</Card>
+      */}
+			<Card className="relative w-[460px] h-[600px]">
+				<CardHeader>
+					<CardTitle className="text-xl">
+						Para começar, precisamos de algumas informações sobre seu novo
+						negócio
+					</CardTitle>
+				</CardHeader>
+				<CardContent className="pt-6">
+					<ConsultationForm neighborhoods={neighborhoods} groups={groups} />
+				</CardContent>
 			</Card>
 		</main>
 	);
