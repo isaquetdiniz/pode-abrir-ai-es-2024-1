@@ -2,6 +2,7 @@
 import { Header } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import {
 	BackgroundContainer,
 	ContentContainer,
@@ -23,7 +24,7 @@ export default function LoginPage() {
 						height={120}
 					/>
 					<ContentText>Entenda onde você vai abrir o seu negócio.</ContentText>
-					<Link href="./BusinessFormPage" passHref>
+					<Link href="./consulta" passHref>
 						<LoginButton>Entrar no portal</LoginButton>
 					</Link>
 				</ContentContainer>
