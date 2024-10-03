@@ -1,4 +1,5 @@
 import ActivityCard from "@/components/ui/activityCard";
+import { Button } from "@/components/ui/button";
 import { CompanyStatusChart } from "@/components/ui/companychart";
 import GrowthCard from "@/components/ui/growthCard";
 import LocationCard from "@/components/ui/locationCard";
@@ -7,6 +8,7 @@ import SuccessCard from "@/components/ui/successCard";
 import { PrismaClient } from "@prisma/client";
 import { addYears, endOfYear, format, startOfYear } from "date-fns";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -39,7 +41,9 @@ export default async function Page({ params }: { params: { id: string } }) {
 			<Navbar className="fixed top-0 w-full" />
 			<main className="flex min-h-screen flex-row items-center justify-between p-24">
 				<MapWithNoSSR companies={companies} />
-
+				<Link className="self-start" href={"/consulta"}>
+					<Button className="bg-[#FF5E03] self-start">Voltar</Button>
+				</Link>
 				<div className="flex flex-col items-center">
 					<div className="mb-4">
 						<CompanyStatusChart size="sm" />
