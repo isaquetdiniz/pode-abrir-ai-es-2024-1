@@ -20,6 +20,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { onSubmit } from "./submit-form";
 
 const formSchema = z.object({
 	neighborhood: z
@@ -44,14 +45,10 @@ export function ConsultationForm({
 		},
 	});
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		console.log(values);
-	}
-
 	return (
 		<Form {...form}>
 			<form
-				onSubmit={form.handleSubmit(onSubmit)}
+				onSubmit={form.handleSubmit((data) => onSubmit({ ...data }))}
 				className="relative flex flex-col items-center space-y-12"
 			>
 				<FormField

@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 import Page from "./page";
 
 test("Page", () => {
-	render(<Page />);
+	render(<Page params={{ id: "a" }} />);
 
 	const main = within(screen.getByRole("main"));
 
