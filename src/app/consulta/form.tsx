@@ -36,7 +36,10 @@ const formSchema = z.object({
 export function ConsultationForm({
 	neighborhoods,
 	groups,
-}: { neighborhoods: { name: string }[]; groups: { name: string }[] }) {
+}: {
+	neighborhoods: { name: string }[];
+	groups: { name: string }[];
+}) {
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -113,7 +116,10 @@ export function ConsultationForm({
 						</FormItem>
 					)}
 				/>
-				<Button type="submit" className="w-[280px] h-[45px]">
+				<Button
+					type="submit"
+					className="w-[280px] h-[45px] bg-[#FF5E03] rounded-lg"
+				>
 					Analisar
 				</Button>
 			</form>
