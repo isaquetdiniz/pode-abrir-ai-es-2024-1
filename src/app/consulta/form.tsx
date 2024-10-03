@@ -20,22 +20,26 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { onSubmit } from "./submit-form";
 
 const formSchema = z.object({
 	neighborhood: z
 		.string()
 		.min(2, { message: "Por favor, selecione uma localidade" })
-		.max(255, { message: "Ops! Tem algo de errado com essa localidade." }),
+		.max(3, { message: "Ops! Tem algo de errado com essa localidade." }),
 	group: z
 		.string()
-		.min(2, { message: "Por favor, selecione uma atividade" })
-		.max(255, { message: "Ops! Tem algo de errado com essa atividade." }),
+		.min(1, { message: "Por favor, selecione uma atividade" })
+		.max(2, { message: "Ops! Tem algo de errado com essa atividade." }),
 });
 
 export function ConsultationForm({
 	neighborhoods,
 	groups,
-}: { neighborhoods: { name: string }[]; groups: { name: string }[] }) {
+}: {
+	neighborhoods: { name: string; code: string }[];
+	groups: { name: string; code: string }[];
+}) {
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -44,14 +48,10 @@ export function ConsultationForm({
 		},
 	});
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		console.log(values);
-	}
-
 	return (
 		<Form {...form}>
 			<form
-				onSubmit={form.handleSubmit(onSubmit)}
+				onSubmit={form.handleSubmit((data) => onSubmit({ ...data }))}
 				className="relative flex flex-col items-center space-y-12"
 			>
 				<FormField
@@ -74,8 +74,8 @@ export function ConsultationForm({
 									</SelectTrigger>
 								</FormControl>
 								<SelectContent>
-									{groups.map(({ name }) => (
-										<SelectItem value={name} key={name}>
+									{groups.map(({ name, code }) => (
+										<SelectItem value={code} key={name}>
 											{name}
 										</SelectItem>
 									))}
@@ -105,8 +105,8 @@ export function ConsultationForm({
 									</SelectTrigger>
 								</FormControl>
 								<SelectContent>
-									{neighborhoods.map(({ name }) => (
-										<SelectItem value={name} key={name}>
+									{neighborhoods.map(({ name, code }) => (
+										<SelectItem value={code} key={name}>
 											{name}
 										</SelectItem>
 									))}
@@ -116,7 +116,10 @@ export function ConsultationForm({
 						</FormItem>
 					)}
 				/>
-				<Button type="submit" className="w-[280px] h-[45px]">
+				<Button
+					type="submit"
+					className="w-[280px] h-[45px] bg-[#FF5E03] rounded-lg"
+				>
 					Analisar
 				</Button>
 			</form>
