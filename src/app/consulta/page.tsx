@@ -8,79 +8,21 @@ export default async function Page() {
 	const { neighborhoods, groups } = await getNeighborhoodsAndGroups();
 
 	return (
-		<>
+		<main className="flex flex-col items-center justify-center w-screen h-screen">
 			<Navbar className="fixed top-0 w-full" />
-			<main className="flex flex-col items-center justify-center w-screen h-screen">
-				<MapWithNoSSR />
-				{/*
-			<Card className="flex flex-col items-center relative w-[460px] h-[600px] space-y-8">
+			<MapWithNoSSR />
+			<Card className="relative w-[460px] h-[600px]">
 				<CardHeader>
 					<CardTitle className="text-xl">
 						Para começar, precisamos de algumas informações sobre seu novo
 						negócio
 					</CardTitle>
 				</CardHeader>
-				<CardContent className="space-y-12">
-					<div className="space-y-3">
-						<p className="text-lg">Qual será a atividade da sua empresa?</p>
-						<CardDescription className="text-sm text-justify">
-							A atividade que uma empresa atua é o setor ou área específica em
-							que ela oferece produtos ou serviços, como comércio, indústria,
-							tecnologia ou serviços especializados.
-						</CardDescription>
-						<Select>
-							<SelectTrigger className="w-[380px]">
-								<SelectValue placeholder="Selecione a atividade" />
-							</SelectTrigger>
-							<SelectContent>
-								{groups.map(({ name }) => (
-									<SelectItem value={name} key={name}>
-										{name}
-									</SelectItem>
-								))}
-							</SelectContent>
-						</Select>
-					</div>
-
-					<div className="space-y-3">
-						<p className="text-lg">Qual será a localidade da sua empresa?</p>
-						<CardDescription className="text-sm text-justify">
-							A escolha de um lugar para a abertura de um empreendimento é
-							crucial no momento da elaboração da análise de viabilidade de um
-							negócio.
-						</CardDescription>
-						<Select>
-							<SelectTrigger className="w-[380px]">
-								<SelectValue placeholder="Selecione a localidade" />
-							</SelectTrigger>
-							<SelectContent>
-								{neighborhoods.map(({ name }) => (
-									<SelectItem value={name} key={name}>
-										{name}
-									</SelectItem>
-								))}
-							</SelectContent>
-						</Select>
-					</div>
+				<CardContent className="pt-6">
+					<ConsultationForm neighborhoods={neighborhoods} groups={groups} />
 				</CardContent>
-				<CardFooter>
-					<Button className="w-[280px] h-[45px]">Analisar</Button>
-				</CardFooter>
 			</Card>
-      */}
-				<Card className="relative w-[460px] h-[600px]">
-					<CardHeader>
-						<CardTitle className="text-xl">
-							Para começar, precisamos de algumas informações sobre seu novo
-							negócio
-						</CardTitle>
-					</CardHeader>
-					<CardContent className="pt-6">
-						<ConsultationForm neighborhoods={neighborhoods} groups={groups} />
-					</CardContent>
-				</Card>
-			</main>
-		</>
+		</main>
 	);
 }
 

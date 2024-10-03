@@ -1,3 +1,4 @@
+import Navbar from "@/components/ui/navbar";
 import { PrismaClient } from "@prisma/client";
 import { addYears, endOfYear, format, startOfYear } from "date-fns";
 import dynamic from "next/dynamic";
@@ -24,6 +25,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
+			<Navbar className="fixed top-0 w-full" />
 			<MapWithNoSSR companies={companies} />
 		</main>
 	);
