@@ -1,15 +1,15 @@
 "use client";
 
-import * as React from "react";
-import Image from "next/image";
-import { FaSignInAlt } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/libs/shadcn/utils";
+import { type VariantProps, cva } from "class-variance-authority";
+import Image from "next/image";
+import * as React from "react";
+import { CgProfile } from "react-icons/cg";
+import { FaSignInAlt } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const headerVariants = cva(
-  "flex justify-between items-center py-4 h-[100px] bg-orange-600 relative z-10"
+  "flex justify-between items-center py-4 h-[80px] bg-orange-600 relative z-10"
 );
 
 const Navbar = React.forwardRef<
