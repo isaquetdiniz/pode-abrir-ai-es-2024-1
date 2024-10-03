@@ -33,11 +33,13 @@ async function getNeighborhoodsAndGroups() {
 		prisma.neighborhood.findMany({
 			select: {
 				name: true,
+				code: true,
 			},
 		}),
 		prisma.group.findMany({
 			select: {
 				name: true,
+				code: true,
 			},
 		}),
 	]);

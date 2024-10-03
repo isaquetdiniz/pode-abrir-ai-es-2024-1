@@ -1,11 +1,22 @@
+import ActivityCard from "@/components/ui/activityCard";
+import { CompanyStatusChart } from "@/components/ui/companychart";
+import GrowthCard from "@/components/ui/growthCard";
+import LocationCard from "@/components/ui/locationCard";
 import Navbar from "@/components/ui/navbar";
+import SuccessCard from "@/components/ui/successCard";
 import { PrismaClient } from "@prisma/client";
 import { addYears, endOfYear, format, startOfYear } from "date-fns";
 import dynamic from "next/dynamic";
+import { redirect } from "next/navigation";
 
 export default async function Page({ params }: { params: { id: string } }) {
 	const { id } = params;
 	const [neighborhoodCode, groupCode] = id.split("-");
+
+	const { neighborhood, group } = await getNeighborhoodAndGroup(
+		neighborhoodCode,
+		groupCode,
+	);
 
 	const [
 		companiesResult,
@@ -24,11 +35,62 @@ export default async function Page({ params }: { params: { id: string } }) {
 	]);
 
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
+		<>
 			<Navbar className="fixed top-0 w-full" />
-			<MapWithNoSSR companies={companies} />
-		</main>
+			<main className="flex min-h-screen flex-row items-center justify-between p-24">
+				<MapWithNoSSR companies={companies} />
+
+				<div className="flex flex-col items-center">
+					<div className="mb-4">
+						<CompanyStatusChart size="sm" />
+					</div>
+					<div
+						className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
+						style={{ width: "362px" }}
+					>
+						<ActivityCard
+							location={neighborhood.name.toUpperCase()}
+							activity={mainActivityNeighborhood}
+						/>
+						<LocationCard
+							location={neighborhoodMainActivity.toUpperCase()}
+							activity={group.name}
+						/>
+						<SuccessCard
+							location={neighborhood.name.toUpperCase()}
+							activity={group.name}
+							successRate={Math.ceil(successRate * 100)}
+						/>
+						<GrowthCard
+							location={neighborhood.name.toUpperCase()}
+							growthRate={Math.ceil(averageIncrease * 100)}
+						/>
+					</div>
+				</div>
+			</main>
+		</>
 	);
+}
+
+async function getNeighborhoodAndGroup(
+	neighborhoodCode: string,
+	groupCode: string,
+) {
+	const prisma = new PrismaClient();
+
+	const [neighborhoodFound, groupFound] = await Promise.all([
+		prisma.neighborhood.findUnique({ where: { code: neighborhoodCode } }),
+		prisma.group.findUnique({ where: { code: groupCode } }),
+	]);
+
+	if (!neighborhoodFound || !groupFound) {
+		redirect("/404");
+	}
+
+	return {
+		neighborhood: neighborhoodFound,
+		group: groupFound,
+	};
 }
 
 async function getCompaniesNeighborhoodAndGroupResult(

@@ -26,19 +26,19 @@ const formSchema = z.object({
 	neighborhood: z
 		.string()
 		.min(2, { message: "Por favor, selecione uma localidade" })
-		.max(255, { message: "Ops! Tem algo de errado com essa localidade." }),
+		.max(3, { message: "Ops! Tem algo de errado com essa localidade." }),
 	group: z
 		.string()
-		.min(2, { message: "Por favor, selecione uma atividade" })
-		.max(255, { message: "Ops! Tem algo de errado com essa atividade." }),
+		.min(1, { message: "Por favor, selecione uma atividade" })
+		.max(2, { message: "Ops! Tem algo de errado com essa atividade." }),
 });
 
 export function ConsultationForm({
 	neighborhoods,
 	groups,
 }: {
-	neighborhoods: { name: string }[];
-	groups: { name: string }[];
+	neighborhoods: { name: string; code: string }[];
+	groups: { name: string; code: string }[];
 }) {
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -74,8 +74,8 @@ export function ConsultationForm({
 									</SelectTrigger>
 								</FormControl>
 								<SelectContent>
-									{groups.map(({ name }) => (
-										<SelectItem value={name} key={name}>
+									{groups.map(({ name, code }) => (
+										<SelectItem value={code} key={name}>
 											{name}
 										</SelectItem>
 									))}
@@ -105,8 +105,8 @@ export function ConsultationForm({
 									</SelectTrigger>
 								</FormControl>
 								<SelectContent>
-									{neighborhoods.map(({ name }) => (
-										<SelectItem value={name} key={name}>
+									{neighborhoods.map(({ name, code }) => (
+										<SelectItem value={code} key={name}>
 											{name}
 										</SelectItem>
 									))}

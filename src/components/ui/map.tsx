@@ -4,6 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
+import { Icon } from "leaflet";
 
 export default function MapComponent(props: {
 	companies: {
@@ -30,7 +31,15 @@ export default function MapComponent(props: {
 				url={url}
 			/>
 			{props?.companies?.map((company) => (
-				<Marker key={company.lat} position={[company.lat, company.lng]}>
+				<Marker
+					key={company.lat}
+					position={[company.lat, company.lng]}
+					icon={
+						new Icon({
+							iconUrl: "/images/marker-md.png",
+						})
+					}
+				>
 					<Popup>
 						{company.cnpj}
 						<br />
