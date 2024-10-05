@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate Prisma
+        run: npm run prisma:generate
+
       - name: Check files
         run: npm run check
 
