@@ -1,6 +1,6 @@
 import ActivityCard from "@/components/ui/activityCard";
 import { Button } from "@/components/ui/button";
-import { CompanyStatusChart } from "@/components/ui/companychart";
+import CompanyStatusChart from "@/components/ui/company-chart";
 import GrowthCard from "@/components/ui/growthCard";
 import LocationCard from "@/components/ui/locationCard";
 import Navbar from "@/components/ui/navbar";
@@ -46,7 +46,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 				</Link>
 				<div className="flex flex-col items-center">
 					<div className="mb-4">
-						<CompanyStatusChart size="sm" />
+						<CompanyStatusChart companies={companiesResult} />
 					</div>
 					<div
 						className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
@@ -160,7 +160,11 @@ async function getCompaniesNeighborhoodAndGroupResult(
 		result[formattedYear] = { opened: openedCount, closed: closedCount };
 	}
 
-	return result;
+	return Object.entries(result).flatMap(([key, value]) => ({
+		year: key,
+		opened: value.opened,
+		closed: value.closed,
+	}));
 }
 
 async function getCompaniesByNeighborhoodAndGroup(
