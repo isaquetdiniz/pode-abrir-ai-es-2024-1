@@ -1,10 +1,6 @@
-import ActivityCard from "@/components/ui/activityCard";
 import { Button } from "@/components/ui/button";
-import { CompanyStatusChart } from "@/components/ui/companychart";
-import GrowthCard from "@/components/ui/growthCard";
-import LocationCard from "@/components/ui/locationCard";
+import ChartsArea from "@/components/ui/charts-area";
 import Navbar from "@/components/ui/navbar";
-import SuccessCard from "@/components/ui/successCard";
 import { PrismaClient } from "@prisma/client";
 import { addYears, endOfYear, format, startOfYear } from "date-fns";
 import dynamic from "next/dynamic";
@@ -27,6 +23,11 @@ export default async function Page({ params }: { params: { id: string } }) {
 		neighborhoodMainActivity,
 		successRate,
 		averageIncrease,
+		populationAge,
+		recifePopulationSalaryMean,
+		populationSalaryMean,
+		populationIncreaseMean,
+		populationGender,
 	] = await Promise.all([
 		getCompaniesNeighborhoodAndGroupResult(neighborhoodCode, groupCode),
 		getCompaniesByNeighborhoodAndGroup(neighborhoodCode, groupCode),
@@ -34,6 +35,11 @@ export default async function Page({ params }: { params: { id: string } }) {
 		getNeighborhoodMainActivity(groupCode),
 		getActivitySuccessRateInNeighborhood(neighborhoodCode, groupCode),
 		getCompaniesNeighborhoodAverageIncrease(neighborhoodCode),
+		getPopulationAge(neighborhoodCode),
+		getRecifePopulationSalaryMean(),
+		getPopulationSalaryMean(neighborhoodCode),
+		getPopulationIncreaseMean(neighborhoodCode),
+		getPopulationGender(neighborhoodCode),
 	]);
 
 	return (
@@ -44,33 +50,20 @@ export default async function Page({ params }: { params: { id: string } }) {
 				<Link className="self-start" href={"/consulta"}>
 					<Button className="bg-[#FF5E03] self-start">Voltar</Button>
 				</Link>
-				<div className="flex flex-col items-center">
-					<div className="mb-4">
-						<CompanyStatusChart size="sm" />
-					</div>
-					<div
-						className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
-						style={{ width: "362px" }}
-					>
-						<ActivityCard
-							location={neighborhood.name.toUpperCase()}
-							activity={mainActivityNeighborhood}
-						/>
-						<LocationCard
-							location={neighborhoodMainActivity.toUpperCase()}
-							activity={group.name}
-						/>
-						<SuccessCard
-							location={neighborhood.name.toUpperCase()}
-							activity={group.name}
-							successRate={Math.ceil(successRate * 100)}
-						/>
-						<GrowthCard
-							location={neighborhood.name.toUpperCase()}
-							growthRate={Math.ceil(averageIncrease * 100)}
-						/>
-					</div>
-				</div>
+				<ChartsArea
+					companiesResult={companiesResult}
+					neighborhood={neighborhood}
+					group={group}
+					mainActivityNeighborhood={mainActivityNeighborhood}
+					neighborhoodMainActivity={neighborhoodMainActivity}
+					successRate={successRate}
+					averageIncrease={averageIncrease}
+					populationAge={populationAge}
+					recifePopulationSalaryMean={recifePopulationSalaryMean}
+					populationSalaryMean={populationSalaryMean}
+					populationIncreaseMean={populationIncreaseMean}
+					populationGender={populationGender}
+				/>
 			</main>
 		</>
 	);
@@ -160,7 +153,11 @@ async function getCompaniesNeighborhoodAndGroupResult(
 		result[formattedYear] = { opened: openedCount, closed: closedCount };
 	}
 
-	return result;
+	return Object.entries(result).flatMap(([key, value]) => ({
+		year: key,
+		opened: value.opened,
+		closed: value.closed,
+	}));
 }
 
 async function getCompaniesByNeighborhoodAndGroup(
@@ -411,6 +408,30 @@ async function getCompaniesNeighborhoodAverageIncrease(
 	]);
 
 	return actualYearCount / lastYearCount;
+}
+
+async function getPopulationAge(neighborhoodCode: string) {
+	return Promise.resolve([
+		{ age: 45, total: 10 },
+		{ age: 50, total: 20 },
+		{ age: 15, total: 10 },
+	]);
+}
+
+async function getRecifePopulationSalaryMean() {
+	return Promise.resolve(3.2);
+}
+
+async function getPopulationSalaryMean(neighborhoodCode: string) {
+	return Promise.resolve(1000);
+}
+
+async function getPopulationIncreaseMean(neighborhoodCode: string) {
+	return Promise.resolve(-0.0134);
+}
+
+async function getPopulationGender(neighborhoodCode: string) {
+	return Promise.resolve("50% / 50%");
 }
 
 const MapWithNoSSR = dynamic(() => import("@/components/ui/map"), {

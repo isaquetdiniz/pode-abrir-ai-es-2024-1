@@ -6,6 +6,9 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
+			"suspicious": {
+				"noExplicitAny": "warn"
+			},
 			"security": {
 				"noDangerouslySetInnerHtml": "warn"
 			},
