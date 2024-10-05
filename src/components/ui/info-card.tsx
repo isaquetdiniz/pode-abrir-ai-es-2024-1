@@ -4,24 +4,21 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import type * as React from "react";
 
-interface LocationCardProps {
-	location: string;
-	activity: string;
-}
+type InfoCardProps = {
+	title: string;
+	info: string | number;
+};
 
-const LocationCard: React.FC<LocationCardProps> = ({ location, activity }) => {
+export default function InfoCard({ title, info }: InfoCardProps) {
 	return (
 		<Card className="w-[168px] h-[160px] flex flex-col items-center justify-center">
 			<CardHeader className="flex flex-col items-center justify-center text-center">
-				<CardTitle className="text-black text-sm">{`LOCALIDADE ONDE ${activity} É PREDOMINANTE`}</CardTitle>
+				<CardTitle className="text-black text-sm">{title}</CardTitle>
 				<CardDescription className="text-[#FF5E03] font-bold">
-					{location}
+					{info}
 				</CardDescription>
 			</CardHeader>
 		</Card>
 	);
-};
-
-export default LocationCard;
+}

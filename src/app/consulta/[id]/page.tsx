@@ -23,6 +23,11 @@ export default async function Page({ params }: { params: { id: string } }) {
 		neighborhoodMainActivity,
 		successRate,
 		averageIncrease,
+		populationAge,
+		recifePopulationSalaryMean,
+		populationSalaryMean,
+		populationIncreaseMean,
+		populationGender,
 	] = await Promise.all([
 		getCompaniesNeighborhoodAndGroupResult(neighborhoodCode, groupCode),
 		getCompaniesByNeighborhoodAndGroup(neighborhoodCode, groupCode),
@@ -30,6 +35,11 @@ export default async function Page({ params }: { params: { id: string } }) {
 		getNeighborhoodMainActivity(groupCode),
 		getActivitySuccessRateInNeighborhood(neighborhoodCode, groupCode),
 		getCompaniesNeighborhoodAverageIncrease(neighborhoodCode),
+		getPopulationAge(neighborhoodCode),
+		getRecifePopulationSalaryMean(),
+		getPopulationSalaryMean(neighborhoodCode),
+		getPopulationIncreaseMean(neighborhoodCode),
+		getPopulationGender(neighborhoodCode),
 	]);
 
 	return (
@@ -48,6 +58,11 @@ export default async function Page({ params }: { params: { id: string } }) {
 					neighborhoodMainActivity={neighborhoodMainActivity}
 					successRate={successRate}
 					averageIncrease={averageIncrease}
+					populationAge={populationAge}
+					recifePopulationSalaryMean={recifePopulationSalaryMean}
+					populationSalaryMean={populationSalaryMean}
+					populationIncreaseMean={populationIncreaseMean}
+					populationGender={populationGender}
 				/>
 			</main>
 		</>
@@ -393,6 +408,30 @@ async function getCompaniesNeighborhoodAverageIncrease(
 	]);
 
 	return actualYearCount / lastYearCount;
+}
+
+async function getPopulationAge(neighborhoodCode: string) {
+	return Promise.resolve([
+		{ age: 45, total: 10 },
+		{ age: 50, total: 20 },
+		{ age: 15, total: 10 },
+	]);
+}
+
+async function getRecifePopulationSalaryMean() {
+	return Promise.resolve(3.2);
+}
+
+async function getPopulationSalaryMean(neighborhoodCode: string) {
+	return Promise.resolve(1000);
+}
+
+async function getPopulationIncreaseMean(neighborhoodCode: string) {
+	return Promise.resolve(-0.0134);
+}
+
+async function getPopulationGender(neighborhoodCode: string) {
+	return Promise.resolve("50% / 50%");
 }
 
 const MapWithNoSSR = dynamic(() => import("@/components/ui/map"), {

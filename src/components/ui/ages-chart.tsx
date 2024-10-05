@@ -15,24 +15,22 @@ import {
 	YAxis,
 } from "recharts";
 
-export default function CompanyStatusChart(props: {
-	companies: { year: string; opened: number; closed: number }[];
+export default function AgesChart(props: {
+	ages: { age: number; total: number }[];
 }) {
 	return (
 		<ChartContainer
 			className="min-h-[200px] w-full"
 			config={{
-				opened: { color: "#FF5E03" },
-				closed: { color: "#B90A0A" },
+				total: { color: "#FF5E03" },
 			}}
 		>
-			<ComposedChart data={props?.companies}>
+			<ComposedChart data={props?.ages}>
 				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis dataKey="year" />
+				<XAxis dataKey="age" />
 				<YAxis />
 				<Tooltip content={<ChartTooltipContent />} />
-				<Bar dataKey="opened" name="Abertas" fill="#FF5E03" />
-				<Bar dataKey="closed" name="Fechadas" fill="#B90A0A" />
+				<Bar dataKey="total" name="Total" fill="#FF5E03" />
 				<ChartLegend />
 			</ComposedChart>
 		</ChartContainer>
