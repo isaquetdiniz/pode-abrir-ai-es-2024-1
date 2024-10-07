@@ -348,7 +348,7 @@ async function getActivitySuccessRateInNeighborhood(
 		}),
 		prisma.company.count({
 			where: {
-				situation: "BAIXADO",
+				situation: { in: ["BAIXADO", "SUSPENSO"] },
 				street: {
 					neighborhoodCode,
 				},
@@ -364,7 +364,9 @@ async function getActivitySuccessRateInNeighborhood(
 		}),
 	]);
 
-	const successRate = openCompanies / closedCompanies;
+	const successRate = closedCompanies
+		? openCompanies / closedCompanies
+		: openCompanies;
 
 	return successRate;
 }
@@ -402,7 +404,7 @@ async function getCompaniesNeighborhoodAverageIncrease(
 		}),
 	]);
 
-	return actualYearCount / lastYearCount;
+	return lastYearCount ? actualYearCount / lastYearCount : actualYearCount;
 }
 
 async function getPopulationAge(neighborhoodCode: string) {
