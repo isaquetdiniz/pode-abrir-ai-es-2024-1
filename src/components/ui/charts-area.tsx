@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { useState } from "react";
 import AgesChart from "./ages-chart";
 import CompanyStatusChart from "./company-chart";
@@ -29,7 +31,12 @@ export default function ChartsArea(props: {
 	const [chartsType, setChartsType] = useState("neighborhood");
 
 	return (
-		<div className="flex flex-col items-center">
+		<div className="flex flex-col items-center ml-5">
+			<Link className="self-start" href={"/consulta"}>
+				<Button className="bg-[#FF5E03] self-start rounded-2xl w-[97px] mb-7">
+					Voltar
+				</Button>
+			</Link>
 			<Select
 				onValueChange={(value) => setChartsType(value)}
 				defaultValue={"neighborhood"}
@@ -81,12 +88,19 @@ function CompaniesCharts(props: {
 }) {
 	return (
 		<>
-			<div className="mb-4">
+			<div className="mb-4 justify-center items-center">
+				<h2 className="font-bold text-2xl mb-5 mt-5 text-center">
+					PANORAMA DE LOCALIDADE
+				</h2>
+				<h3 className="font-bold text-lg mb-5 mt-5 text-center">
+					EMPRESAS DE {props.mainActivityNeighborhood} ABERTAS E <br />
+					FECHADAS EM {` ${props.neighborhood.name.toUpperCase()}`}
+				</h3>
 				<CompanyStatusChart companies={props.companiesResult} />
 			</div>
 			<div
-				className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
-				style={{ width: "362px" }}
+				className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full place-items-center"
+				style={{ width: "30vw" }}
 			>
 				<InfoCard
 					title={`ATIVIDADE PREDOMINANTE EM ${props.neighborhood.name.toUpperCase()}`}
@@ -97,7 +111,9 @@ function CompaniesCharts(props: {
 					info={props.neighborhoodMainActivity.toUpperCase()}
 				/>
 				<InfoCard
-					title={`TAXA DE SUCESSO DE ${props.group.name} EM ${props.neighborhood.name.toUpperCase()}`}
+					title={`TAXA DE SUCESSO DE ${
+						props.group.name
+					} EM ${props.neighborhood.name.toUpperCase()}`}
 					info={`${Math.ceil(props.successRate * 100)}%`}
 				/>
 				<InfoCard
@@ -119,15 +135,21 @@ function PopulationCharts(props: {
 	return (
 		<>
 			<div className="mb-4">
+				<h2 className="font-bold text-2xl mb-5 mt-5">PANORAMA DE POPULAÇÃO</h2>
+				<h3 className="font-bold text-lg mb-5 mt-5 text-center">
+					DISTRIBUIÇÃO DE IDADES
+				</h3>
 				<AgesChart ages={props.populationAge} />
 			</div>
 			<div
-				className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
-				style={{ width: "362px" }}
+				className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full place-items-center"
+				style={{ width: "30vw" }}
 			>
 				<InfoCard
 					title="SALÁRIO MÉDIO DOS TRABALHADORES FORMAIS (2022)"
-					info={`${Intl.NumberFormat("pt-BR", { style: "decimal" }).format(props.recifePopulationSalaryMean)} SALÁRIOS MÍNIMOS`}
+					info={`${Intl.NumberFormat("pt-BR", { style: "decimal" }).format(
+						props.recifePopulationSalaryMean,
+					)} SALÁRIOS MÍNIMOS`}
 				/>{" "}
 				<InfoCard
 					title="RENDIMENTO NOMINAL MÉDIO"

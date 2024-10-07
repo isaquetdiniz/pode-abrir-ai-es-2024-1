@@ -1,10 +1,8 @@
-import { Button } from "@/components/ui/button";
 import ChartsArea from "@/components/ui/charts-area";
 import Navbar from "@/components/ui/navbar";
 import { PrismaClient } from "@prisma/client";
 import { addYears, endOfYear, format, startOfYear } from "date-fns";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -47,9 +45,6 @@ export default async function Page({ params }: { params: { id: string } }) {
 			<Navbar className="fixed top-0 w-full" />
 			<main className="flex min-h-screen flex-row items-center justify-between p-24">
 				<MapWithNoSSR companies={companies} />
-				<Link className="self-start" href={"/consulta"}>
-					<Button className="bg-[#FF5E03] self-start">Voltar</Button>
-				</Link>
 				<ChartsArea
 					companiesResult={companiesResult}
 					neighborhood={neighborhood}
