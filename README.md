@@ -30,7 +30,11 @@
 
 ## Screenshots
 
-![Screenshot 1](link-para-screenshot.png)
+<img width="1421" alt="screenshot-1" src="https://github.com/user-attachments/assets/99853ba0-c364-4fd8-baf0-03a702505cb8">
+<img width="1421" alt="image" src="https://github.com/user-attachments/assets/d6fade7d-becf-46c0-a965-2a1a205fcf8f">
+<img width="1056" alt="image" src="https://github.com/user-attachments/assets/72cab089-6671-4ba8-8c74-13f0d745f4e7">
+<img width="1056" alt="image" src="https://github.com/user-attachments/assets/f396b8bd-bf38-4dc6-8c40-38259d1e965e">
+
 
 ## Início Rápido
 
