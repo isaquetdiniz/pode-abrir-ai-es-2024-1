@@ -93,7 +93,7 @@ function CompaniesCharts(props: {
 					PANORAMA DE LOCALIDADE
 				</h2>
 				<h3 className="font-bold text-lg mb-5 mt-5 text-center">
-					EMPRESAS DE {props.mainActivityNeighborhood} ABERTAS E <br />
+					EMPRESAS DE {props.group.name} ABERTAS E <br />
 					FECHADAS EM {` ${props.neighborhood.name.toUpperCase()}`}
 				</h3>
 				<CompanyStatusChart companies={props.companiesResult} />
